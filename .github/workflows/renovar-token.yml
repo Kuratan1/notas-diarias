@@ -1,0 +1,28 @@
+name: Renovar token do Instagram
+
+on:
+  schedule:
+    - cron: "0 12 1,15 * *" # dias 1 e 15, 9h de Brasília (o token vale 60 dias)
+  workflow_dispatch:
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    env:
+      IG_TOKEN: ${{ secrets.IG_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: renovar
+        run: python3 postar.py --renovar-token
+      # Só necessário se a Meta devolver um token com valor diferente.
+      # Para isso, crie o segredo GH_PAT (token do GitHub com permissão "Secrets: write" neste repositório).
+      - if: steps.renovar.outputs.novo_token != ''
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          NOVO: ${{ steps.renovar.outputs.novo_token }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::A Meta devolveu um token novo, mas não há GH_PAT para salvá-lo. Atualize o segredo IG_TOKEN à mão."
+            exit 1
+          fi
+          gh secret set IG_TOKEN --body "$NOVO" --repo "${{ github.repository }}"

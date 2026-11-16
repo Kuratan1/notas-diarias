@@ -1,0 +1,23 @@
+{
+  "name": "notas-diarias",
+  "private": true,
+  "description": "Frases estilo Notas publicadas automaticamente no Instagram",
+  "scripts": {
+    "studio": "remotion studio"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/google-fonts": "4.0.539",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.539",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}

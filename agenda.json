@@ -1,0 +1,29 @@
+{
+  "_como_usar": "Um item por post. 'quando' é a hora da postagem (horário de Brasília). A hora que aparece na nota é calculada na hora de publicar (1 a 3 min antes do momento real). 'escuro': true para o modo escuro.",
+  "posts": [
+    {
+      "id": "2026-11-17-cafe",
+      "quando": "2026-11-17 07:00",
+      "titulo": "bom dia",
+      "frase": "Café quente, céu limpo e nenhuma pressa.\n\nÀs vezes é só isso.",
+      "escuro": false,
+      "legenda": "Manda pra alguém que precisa começar o dia com calma."
+    },
+    {
+      "id": "2026-11-18-xicara",
+      "quando": "2026-11-18 07:00",
+      "titulo": "lembrete pra mim",
+      "frase": "Tem alegria que cabe numa xícara.\n\nComeça o dia por ela.",
+      "escuro": false,
+      "legenda": "Bom dia. ☕"
+    },
+    {
+      "id": "2026-11-19-aviso",
+      "quando": "2026-11-19 06:45",
+      "titulo": "anote agora",
+      "frase": "Coisas boas também acontecem sem aviso.\n\nFica atento hoje.",
+      "escuro": true,
+      "legenda": "Manda pra quem você quer que tenha um bom dia."
+    }
+  ]
+}
